@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Calculando Média</h1>
+  <form method="get" action="/calcula_media">
+    Primeira nota: <input type="number" name="primeira"><br>
+    Segunda nota: <input type="number" name="segunda"><br><br>
+    <input type="submit" value="Calcular">
+  </form>
+  {% if resultado %}
+    <h2>{{resultado}}</h2>
+  {% endif %}
+</body>
+</html>

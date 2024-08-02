@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Cadastro de Alunos</h1>
+  <a href="{{ url_for('add_aluno') }}">Adicionar Aluno</a>
+  <ul>
+    {% for aluno in alunos %}
+    <li>
+      {{ aluno.nome }} - {{ aluno.turma }}
+      <a href="{{ url_for('edit_aluno', id=aluno.id) }}">EDITAR</a>
+
+      <form method="post" action="{{ url_for('delete_aluno', id=aluno.id) }}">
+
+        <input type="submit" value="Excluir">
+      </form>
+    </li>
+    {% endfor %}
+  </ul>
+
+</body>
+</html>
